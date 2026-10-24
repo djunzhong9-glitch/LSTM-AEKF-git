@@ -1,0 +1,224 @@
+{
+  "mode": "paper",
+  "runs": 30,
+  "scenarios": [
+    "nonlinear_structured"
+  ],
+  "gm_tau_s": 15.0,
+  "gm_drive_psd_m2_s5": 3.2e-08,
+  "metric_summary": {
+    "nonlinear_structured": {
+      "GM-9D EKF": {
+        "position_rss_rmse_m": {
+          "n": 30,
+          "mean": 0.06979349723399736,
+          "std": 0.00567095356445319,
+          "min": 0.058969190762885634,
+          "max": 0.07830783356344134
+        },
+        "velocity_rss_rmse_mps": {
+          "n": 30,
+          "mean": 0.009489065424377533,
+          "std": 0.0009575934647932423,
+          "min": 0.007405293421385976,
+          "max": 0.012273263625916535
+        },
+        "normalized_nis": {
+          "n": 30,
+          "mean": 1.1139822860107615,
+          "std": 0.042762145596118656,
+          "min": 1.0007450406180396,
+          "max": 1.2017538395797125
+        },
+        "normalized_nees": {
+          "n": 30,
+          "mean": 1.1726240058685333,
+          "std": 0.19514474805047663,
+          "min": 0.7255956179686877,
+          "max": 1.7048532201237885
+        }
+      },
+      "GM-9D EKF + R-CM": {
+        "position_rss_rmse_m": {
+          "n": 30,
+          "mean": 0.07042887336994713,
+          "std": 0.00591560655263528,
+          "min": 0.058962173107700494,
+          "max": 0.08089098270661131
+        },
+        "velocity_rss_rmse_mps": {
+          "n": 30,
+          "mean": 0.009443864441821772,
+          "std": 0.0009835387759722205,
+          "min": 0.007692177219443069,
+          "max": 0.012281003866110779
+        },
+        "normalized_nis": {
+          "n": 30,
+          "mean": 1.0803446696962438,
+          "std": 0.0051072181260792635,
+          "min": 1.0692773088268335,
+          "max": 1.0931241368734799
+        },
+        "normalized_nees": {
+          "n": 30,
+          "mean": 1.1912881211713542,
+          "std": 0.20708973553019952,
+          "min": 0.8064340518946499,
+          "max": 1.805515426489878
+        }
+      },
+      "GM-9D EKF + oracle residual": {
+        "position_rss_rmse_m": {
+          "n": 30,
+          "mean": 0.05965493899637105,
+          "std": 0.005228093885569035,
+          "min": 0.04955696864481893,
+          "max": 0.06848847348701526
+        },
+        "velocity_rss_rmse_mps": {
+          "n": 30,
+          "mean": 0.005606969420294917,
+          "std": 0.00038558385083311387,
+          "min": 0.004858626318537102,
+          "max": 0.006344384418258836
+        },
+        "normalized_nis": {
+          "n": 30,
+          "mean": 1.1071974609558006,
+          "std": 0.043218957793233335,
+          "min": 0.9936543579214709,
+          "max": 1.195305309899853
+        },
+        "normalized_nees": {
+          "n": 30,
+          "mean": 0.700853516576998,
+          "std": 0.10905734781213522,
+          "min": 0.45597645375049506,
+          "max": 0.8836535666858211
+        }
+      },
+      "GM-Res-LSTM-AEKF": {
+        "position_rss_rmse_m": {
+          "n": 5,
+          "mean": 0.07093256145890559,
+          "std": 7.495774566130761e-05,
+          "min": 0.07083521506343748,
+          "max": 0.07103132660621576
+        },
+        "velocity_rss_rmse_mps": {
+          "n": 5,
+          "mean": 0.00973799189301787,
+          "std": 2.7401779088669142e-05,
+          "min": 0.009716615839697166,
+          "max": 0.009777969239350707
+        },
+        "normalized_nis": {
+          "n": 5,
+          "mean": 1.0253635201256261,
+          "std": 3.754291865639528e-05,
+          "min": 1.025324052244642,
+          "max": 1.0254243271012258
+        },
+        "normalized_nees": {
+          "n": 5,
+          "mean": 1.1924260457458875,
+          "std": 0.006342548814529501,
+          "min": 1.1866440592173217,
+          "max": 1.1995713266378707
+        }
+      }
+    }
+  },
+  "oracle_gap_summary": {
+    "nonlinear_structured": {
+      "position_rss_rmse_m": {
+        "gm_9d_mean": 0.06979349723399736,
+        "oracle_residual_mean": 0.05965493899637105,
+        "gm_res_lstm_mean": 0.07093256145890559,
+        "oracle_improvement": 0.010138558237626306,
+        "learned_improvement": -0.0011390642249082261,
+        "learned_fraction_of_oracle_gap": -0.11234972450825612
+      },
+      "velocity_rss_rmse_mps": {
+        "gm_9d_mean": 0.009489065424377533,
+        "oracle_residual_mean": 0.005606969420294917,
+        "gm_res_lstm_mean": 0.00973799189301787,
+        "oracle_improvement": 0.003882096004082616,
+        "learned_improvement": -0.0002489264686403366,
+        "learned_fraction_of_oracle_gap": -0.06412166736179437
+      }
+    }
+  },
+  "diagnostic_summary": {
+    "nonlinear_structured": {
+      "total_acceleration_corr_mean": {
+        "n": 150,
+        "mean": 0.20338807254029959,
+        "std": 0.09702850633629351,
+        "min": -0.050577505620578965,
+        "max": 0.41834080705877436
+      },
+      "same_time_residual_corr_mean": {
+        "n": 150,
+        "mean": -0.07787842622585386,
+        "std": 0.10304417760220741,
+        "min": -0.34044058578214315,
+        "max": 0.18608239110662692
+      },
+      "interval_injected_residual_corr_mean": {
+        "n": 150,
+        "mean": -0.07781935199835568,
+        "std": 0.10302501983376437,
+        "min": -0.3405836901936104,
+        "max": 0.18642606385766222
+      },
+      "learned_to_zero_mse_ratio": {
+        "n": 150,
+        "mean": 1.166716007502143,
+        "std": 0.1463120558938521,
+        "min": 0.7752635152150731,
+        "max": 1.8095311878622997
+      },
+      "clip_fraction": {
+        "n": 150,
+        "mean": 0.0,
+        "std": 0.0,
+        "min": 0.0,
+        "max": 0.0
+      },
+      "true_residual_rms_mps2": {
+        "n": 150,
+        "mean": 0.0007609224822970679,
+        "std": 0.00010665830142713165,
+        "min": 0.0005444380968121935,
+        "max": 0.0010985564944325525
+      },
+      "learned_residual_rms_mps2": {
+        "n": 150,
+        "mean": 0.00030407780456602853,
+        "std": 5.737236800030896e-05,
+        "min": 0.00020229816601193516,
+        "max": 0.0004795526019608511
+      },
+      "best_lag_steps_flat": {
+        "-5": 236,
+        "-4": 0,
+        "-3": 2,
+        "-2": 3,
+        "-1": 2,
+        "0": 139,
+        "1": 2,
+        "2": 1,
+        "3": 0,
+        "4": 1,
+        "5": 64
+      }
+    }
+  },
+  "output_files": {
+    "metrics_csv": "D:\\LSTM-AEKF\\artifacts\\oracle_residual_diagnostics_v9\\oracle_residual_metrics.csv",
+    "diagnostics_csv": "D:\\LSTM-AEKF\\artifacts\\oracle_residual_diagnostics_v9\\residual_correlation_rows.csv",
+    "oracle_gap_csv": "D:\\LSTM-AEKF\\artifacts\\oracle_residual_diagnostics_v9\\oracle_gap_summary.csv"
+  }
+}

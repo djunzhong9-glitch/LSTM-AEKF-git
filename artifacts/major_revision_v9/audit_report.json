@@ -1,0 +1,164 @@
+{
+  "artifact_dir": "D:\\LSTM-AEKF\\artifacts\\major_revision_v9",
+  "checks": {
+    "training_seed_set_ok": true,
+    "all_model_hashes_ok": true,
+    "gm_test_set_unused": true,
+    "adaptive_gm_test_set_unused": true,
+    "gm_internal_plateau_resolved": true,
+    "holm_family_size_matches_tests": true,
+    "adaptive_holm_family_size_matches_tests": true,
+    "holm_inference_unit_ok": true,
+    "adaptive_holm_inference_unit_ok": true,
+    "adaptive_gm_in_crossed_summary": true,
+    "adaptive_gm_in_factor_summary": true,
+    "all_csv_checks_ok": true
+  },
+  "passed": true,
+  "models": [
+    {
+      "training_seed": 20260719,
+      "model_path": "D:\\LSTM-AEKF\\artifacts\\major_revision_v9\\models\\dual_head_lstm_trainseed_20260719.npz",
+      "expected_sha256": "22b0937f1821be56899a5c01abcd2dbb3a19f0a29ef36840de6e419ff5e8d3e9",
+      "actual_sha256": "22b0937f1821be56899a5c01abcd2dbb3a19f0a29ef36840de6e419ff5e8d3e9",
+      "hash_ok": true
+    },
+    {
+      "training_seed": 20260791,
+      "model_path": "D:\\LSTM-AEKF\\artifacts\\major_revision_v9\\models\\dual_head_lstm_trainseed_20260791.npz",
+      "expected_sha256": "834e4c74ebda21cc7ed3beb9129905e51b751d5a93139c9afb5ec53d31915b6c",
+      "actual_sha256": "834e4c74ebda21cc7ed3beb9129905e51b751d5a93139c9afb5ec53d31915b6c",
+      "hash_ok": true
+    },
+    {
+      "training_seed": 20260863,
+      "model_path": "D:\\LSTM-AEKF\\artifacts\\major_revision_v9\\models\\dual_head_lstm_trainseed_20260863.npz",
+      "expected_sha256": "24c25bc2f36adbb6a52c55518740e425551bdd59cd31865103929033667942e7",
+      "actual_sha256": "24c25bc2f36adbb6a52c55518740e425551bdd59cd31865103929033667942e7",
+      "hash_ok": true
+    },
+    {
+      "training_seed": 20260935,
+      "model_path": "D:\\LSTM-AEKF\\artifacts\\major_revision_v9\\models\\dual_head_lstm_trainseed_20260935.npz",
+      "expected_sha256": "193d4eee9f1f0e3e3fdd6ee9bd26893676db232e4495e1d44b168a287057f34f",
+      "actual_sha256": "193d4eee9f1f0e3e3fdd6ee9bd26893676db232e4495e1d44b168a287057f34f",
+      "hash_ok": true
+    },
+    {
+      "training_seed": 20261007,
+      "model_path": "D:\\LSTM-AEKF\\artifacts\\major_revision_v9\\models\\dual_head_lstm_trainseed_20261007.npz",
+      "expected_sha256": "f122728f1d2d4f289e4a1d35f9d7e175141d0187752dc826e6948a6c8b829a3d",
+      "actual_sha256": "f122728f1d2d4f289e4a1d35f9d7e175141d0187752dc826e6948a6c8b829a3d",
+      "hash_ok": true
+    }
+  ],
+  "gm": {
+    "selected_tau_s": 15.0,
+    "selected_drive_psd_m2_s5": 3.2e-08,
+    "grid_status": "interior_near_optimal_plateau"
+  },
+  "adaptive_gm": {
+    "selected_name": "tau_dominant",
+    "selected_score": 0.9092613671322489,
+    "selected_parameters": {
+      "adaptive_gm_tau_min_s": 15.0,
+      "adaptive_gm_tau_max_s": 160.0,
+      "adaptive_gm_drive_min_factor": 0.8,
+      "adaptive_gm_drive_max_factor": 1.25,
+      "adaptive_gm_activity_bias": -1.1,
+      "adaptive_gm_alpha_ema": 0.9,
+      "adaptive_gm_tau_max_log_step": 0.018,
+      "adaptive_gm_drive_max_log_step": 0.01,
+      "adaptive_gm_use_axiswise_drive": false
+    }
+  },
+  "holm": {
+    "family_size": 32,
+    "rejected_at_0_05": 32
+  },
+  "adaptive_holm": {
+    "family_size": 20,
+    "rejected_at_0_05": 15
+  },
+  "csv": {
+    "id": {
+      "path": "D:\\LSTM-AEKF\\artifacts\\major_revision_v9\\crossed_id_rows.csv",
+      "row_count": 8700,
+      "expected_row_count": 8700,
+      "row_count_ok": true,
+      "nonfinite": [],
+      "all_core_metrics_finite": true,
+      "test_seeds_ok": true,
+      "training_seeds": [
+        20260719,
+        20260791,
+        20260863,
+        20260935,
+        20261007
+      ],
+      "training_seeds_ok": true,
+      "methods": [
+        "Adaptive GM-AEKF",
+        "Adaptive GM-AEKF (fixed drive)",
+        "Adaptive GM-AEKF (fixed tau)",
+        "Adaptive GM-AEKF (no R-CM)",
+        "Adaptive GM-AEKF (no accel-diff trigger)",
+        "Adaptive GM-AEKF (no innovation corr)",
+        "Coupled-NIS Q/R AEKF",
+        "Deterministic acceleration mean only",
+        "Fixed EKF",
+        "GM-9D EKF",
+        "GM-9D EKF + LSTM residual",
+        "GM-9D EKF + LSTM residual (no residual head)",
+        "GM-9D EKF + LSTM residual (with LSTM R head)",
+        "GM-9D EKF + R-CM",
+        "Innovation-CM AEKF",
+        "Known-scale EKF",
+        "No Q slow constraint",
+        "No R fast channel",
+        "No acceleration head",
+        "PC-DH-LSTM-AEKF",
+        "Sage-Husa/Fading AEKF",
+        "Shared NIS Q/R in full model"
+      ],
+      "phases": [
+        "early",
+        "full",
+        "late",
+        "middle",
+        "post_burn_in"
+      ]
+    },
+    "single_factor": {
+      "path": "D:\\LSTM-AEKF\\artifacts\\major_revision_v9\\single_factor_scan_rows.csv",
+      "row_count": 37050,
+      "expected_row_count": 37050,
+      "row_count_ok": true,
+      "nonfinite": [],
+      "all_core_metrics_finite": true,
+      "test_seeds_ok": true,
+      "training_seeds": [
+        20260719,
+        20260791,
+        20260863,
+        20260935,
+        20261007
+      ],
+      "training_seeds_ok": true,
+      "methods": [
+        "Adaptive GM-AEKF",
+        "Fixed EKF",
+        "GM-9D EKF",
+        "GM-9D EKF + LSTM residual",
+        "PC-DH-LSTM-AEKF"
+      ],
+      "phases": [
+        "early",
+        "full",
+        "late",
+        "middle",
+        "post_burn_in"
+      ]
+    }
+  }
+}
